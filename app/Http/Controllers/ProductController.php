@@ -38,6 +38,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'name'=>['required'],
             'category'=>['required'],
@@ -49,9 +50,9 @@ class ProductController extends Controller
             'country'=>'',
             'quality'=>'',
             'quantity'=>'',
-            'image'=>'',
+            'image_url'=>'',
         ]);
-
+        $validatedData['image_url'] = 'storage/' . $request->image_url->storeAs('products', $request->image_url->getClientOriginalName());
         Product::create($validatedData);
 
         return redirect()->route('home');
