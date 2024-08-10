@@ -79,7 +79,6 @@ class CartController extends Controller
     {
         $cart = session()->get('cart', []);
         unset($cart[$id]);
-
         session()->put('cart', $cart);
         return redirect()->back();
     }
