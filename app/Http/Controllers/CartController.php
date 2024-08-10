@@ -66,9 +66,7 @@ class CartController extends Controller
         $product = product::find($id);
         $cart = session()->get('cart', []);
         $product->quantity = $request->quantity;
-
         $cart[$product->id] = $product;
-
         session()->put('cart', $cart);
 
         return redirect()->back();
