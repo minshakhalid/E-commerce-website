@@ -13,8 +13,16 @@ class CartController extends Controller
     public function index()
     {
         $cart = session()->get('cart',[]);
+        $sum = 0;
+        foreach ($cart as $item){
+            $item->final_price = $item->price * $item->quantity;
+            $sum += $item->final_price;
+        }
+        session()->put('cart', $cart);
+
         return view('cart.index', [
-            'cart' => $cart
+            'cart' => $cart,
+            'sum' => $sum
         ]);
 
     }

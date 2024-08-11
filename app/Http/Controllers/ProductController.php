@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::simplePaginate($request->perPage);
+        $products = Product::simplePaginate(8);
 
         return view('product.index', [
             'products' => $products
