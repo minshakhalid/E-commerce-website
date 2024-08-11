@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(8);
 
         return view('welcome', [
             'products' => $products
