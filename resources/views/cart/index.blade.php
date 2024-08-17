@@ -35,7 +35,7 @@
                             <tr>
                                 <th scope="row">
                                     <div class="d-flex align-items-center">
-                                        <img src="{{asset( $item->image_url) }}" class="img-fluid me-5" style="width: 85px; height: 90; border-radius: 10px" alt="">
+                                        <img src="{{asset( $item->image_url) }}" class="img-fluid me-5" style="width: 85px; height: auto; border-radius: 10px" alt="">
                                     </div>
                                 </th>
                                 <td>
@@ -64,11 +64,16 @@
                                         </div>
                                 </td>
                                 <td>
-                                    <p class="mb-0 mt-4">{{ $item -> final_price }} $</p>
+                                    <p class="mb-0 mt-4">{{ $item -> final_price }}.00 $</p>
                                 </td>
                                 <td>
                                     <button class="btn btn-md rounded-circle bg-light border mt-3" >
-                                        <i class="fa fa-times text-danger"></i>
+
+                                        <form action="{{ route('cart.destroy', $item) }}" id="removeFromCart-{{ $item->id }}"  method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <i class="fa fa-times text-danger" onclick="document.getElementById('removeFromCart-{{ $item->id }}').submit()"></i>
+                                        </form>
                                     </button>
 {{--                                    <form action="{{ route('cart.update', $item) }}" id="updateFromCart-{{ $item->id }}"  method="POST">--}}
 
@@ -108,7 +113,7 @@
                             <h1 style="font-family: Poppins" class="display-6 mb-4">Cart <span class="display-6">Total</span></h1>
                             <div class="d-flex justify-content-between mb-4">
                                 <h5 class="mb-0 me-4">Subtotal:</h5>
-                                <p class="mb-0">{{ $sum }} $</p>
+                                <p class="mb-0">{{ $sum }}.00 $</p>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <h5 class="mb-0 me-4">Shipping</h5>
@@ -119,9 +124,11 @@
                         </div>
                         <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                             <h5 class="mb-0 ps-4 me-4">Total</h5>
-                            <p class="mb-0 pe-4">{{$sum}} $</p>
+                            <p class="mb-0 pe-4">{{$sum}}.00 $</p>
                         </div>
+                        <a href="{{route('checkout.index')}}">
                         <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                        </a>
                     </div>
                 </div>
             </div>
