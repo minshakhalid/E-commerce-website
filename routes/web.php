@@ -25,3 +25,9 @@ Route::resource('products', ProductController::class);
 Route::resource('cart', CartController::class);
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout.index');
+
+Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout.store');
+
+Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment.index');
+
+Route::post('/payment', [App\Http\Controllers\PaymentController::class, 'store'])->name('payment.store');

@@ -67,14 +67,10 @@
                                     <p class="mb-0 mt-4">{{ $item -> final_price }}.00 $</p>
                                 </td>
                                 <td>
-                                    <button class="btn btn-md rounded-circle bg-light border mt-3" >
 
-                                        <form action="{{ route('cart.destroy', $item) }}" id="removeFromCart-{{ $item->id }}"  method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <i class="fa fa-times text-danger" onclick="document.getElementById('removeFromCart-{{ $item->id }}').submit()"></i>
-                                        </form>
-                                    </button>
+
+
+
 {{--                                    <form action="{{ route('cart.update', $item) }}" id="updateFromCart-{{ $item->id }}"  method="POST">--}}
 
 {{--                                        <div class="input-group quantity mb-5" style="width: 100px;">--}}
@@ -94,6 +90,13 @@
                                             <i class="fa fa-check text-primary" onclick="document.getElementById('updateFromCart-{{ $item->id }}').submit()"></i>
                                         </button>
                                     </form>
+                                <form action="{{ route('cart.destroy', $item) }}" id="removeFromCart-{{ $item->id }}"  method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-md rounded-circle bg-light border" >
+                                        <i class="fa fa-times text-danger" onclick="document.getElementById('removeFromCart-{{ $item->id }}').submit()"></i>
+                                    </button>
+                                </form>
                                 </td>
 
                             </tr>
