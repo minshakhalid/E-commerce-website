@@ -60,6 +60,7 @@
                             <label class="form-label my-3">Email Address<sup>*</sup></label>
                             <input type="email" name="email" class="form-control">
                         </div>
+                        <input type="hidden" value="{{$sum}}" name="sum">
 
 {{--                        <div class="form-check my-3">--}}
 {{--                            <input type="checkbox" class="form-check-input" id="Account-1" name="Accounts" value="Accounts">--}}

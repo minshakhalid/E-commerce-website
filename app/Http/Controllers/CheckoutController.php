@@ -43,7 +43,7 @@ class CheckoutController extends Controller
     Customer::create($validatedData);
     if ($request->option == "Online Payment"){
         return redirect()->route('payment.index', [
-            'sum'=>90
+            'sum'=>$request->sum
         ]);
     }
     return redirect()->route('home');
