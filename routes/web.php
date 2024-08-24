@@ -31,3 +31,5 @@ Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment.index');
 
 Route::post('/payment', [App\Http\Controllers\PaymentController::class, 'store'])->name('payment.store');
+
+Route::view('/contact', 'contact')->name('contact');
