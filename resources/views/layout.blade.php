@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -218,7 +221,20 @@
 <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
 <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
 <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+<script>
+    window.onload = function exampleFunction() {
+        let popup = localStorage.getItem("popup");
+        console.log(popup);
+        if(popup == "true"){
+            Swal.fire({
+                title: "Payment Successful",
 
+                icon: "success"
+            });
+        }
+        localStorage.clear();
+    }
+</script>
 <!-- Template Javascript -->
 <script src="{{ asset('js/main.js') }}"></script>
 </body>
