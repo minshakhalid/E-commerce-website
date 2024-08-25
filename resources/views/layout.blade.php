@@ -63,9 +63,9 @@
                 <div class="navbar-nav mx-auto">
                     <a href="{{ route('welcome') }}" class="nav-item nav-link @if(\Illuminate\Support\Facades\Route::getCurrentRoute()->getName() == 'welcome') active @endif" >Home</a>
                     <a href="{{ route('products.index') }}" class="nav-item nav-link @if(\Illuminate\Support\Facades\Route::getCurrentRoute()->getName() == 'products.index') active @endif">Shop</a>
-                    <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <a=></a>
                         <div class="dropdown-menu m-0 bg-secondary rounded-0">
                             <a href="cart.html" class="dropdown-item">Cart</a>
                             <a href="chackout.html" class="dropdown-item">Chackout</a>
@@ -147,36 +147,36 @@
                     <h4 class="text-light mb-3">Why People Like us!</h4>
                     <p class="mb-4">typesetting, remaining essentially unchanged. It was
                         popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
-                    <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="d-flex flex-column text-start footer-item">
                     <h4 class="text-light mb-3">Shop Info</h4>
-                    <a class="btn-link" href="">About Us</a>
-                    <a class="btn-link" href="">Contact Us</a>
-                    <a class="btn-link" href="">Privacy Policy</a>
-                    <a class="btn-link" href="">Terms & Condition</a>
-                    <a class="btn-link" href="">Return Policy</a>
-                    <a class="btn-link" href="">FAQs & Help</a>
+                    <a class="btn-link" href="">contact Us</a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="d-flex flex-column text-start footer-item">
-                    <h4 class="text-light mb-3">Account</h4>
-                    <a class="btn-link" href="">My Account</a>
-                    <a class="btn-link" href="">Shop details</a>
-                    <a class="btn-link" href="">Shopping Cart</a>
-                    <a class="btn-link" href="">Wishlist</a>
-                    <a class="btn-link" href="">Order History</a>
-                    <a class="btn-link" href="">International Orders</a>
+                    <h4 class="text-light mb-3"></h4>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
+                    <a class="btn-link" href=""></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h4 class="text-light mb-3">Contact</h4>
-                    <p>Address: 1429 Netus Rd, NY 48247</p>
-                    <p>Email: Example@gmail.com</p>
+                    <p>Address: M-tech Institude of johar</p>
+                    <p>Email: Info@m-tech.com</p>
                     <p>Phone: +0123 4567 8910</p>
                     <p>Payment Accepted</p>
                     <img src="img/payment.png" class="img-fluid" alt="">
@@ -192,13 +192,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Fruitables</a></span>
             </div>
             <div class="col-md-6 my-auto text-center text-md-end text-white">
                 <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                 <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                 <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                Designed By Hassan,Musa,Minsha
             </div>
         </div>
     </div>
