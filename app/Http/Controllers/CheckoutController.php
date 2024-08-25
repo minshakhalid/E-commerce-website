@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -40,10 +41,22 @@ class CheckoutController extends Controller
         'order_notes'=>'',
         'option'=>['required']
     ]);
-    Customer::create($validatedData);
+    $customer = Customer::create($validatedData);
+
+        $cart = session()->get('cart',[]);
+
+        foreach ($cart as $item){
+            $order = new Order();
+            $order->product_id = $item->id;
+            $order->customer_id = $customer->id;
+            $order->quantity = $item->quantity;
+            $order->amount = $item->final_price;
+            $order->save();
+        }
+
     if ($request->option == "Online Payment"){
         return redirect()->route('payment.index', [
-            'sum'=>90
+            'sum'=>$request->sum
         ]);
     }
     return redirect()->route('home');

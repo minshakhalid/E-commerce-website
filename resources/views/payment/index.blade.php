@@ -19,30 +19,30 @@
             <div class="p-5 bg-light rounded">
                 <div class="row g-4">
                     <div class="col-12">
-                        <div class="text-center mx-auto" style="max-width: 700px;">
-                            <h1 class="text-primary">Payment</h1>
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        </div>
+{{--                        <div class="text-center mx-auto" style="max-width: 700px;">--}}
+{{--                            <h1 class="text-primary">Payment</h1>--}}
+{{--                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>--}}
+{{--                        </div>--}}
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 mx-auto ">
                         <form action="{{ route('payment.store') }}" method="POST" class="require-validation" id="payment-form" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}">
                             @csrf
                             <input type="number" hidden name="amount" value="{{ $sum }}">
                             <div class='form-row row'>
-                                <div class='col-xs-12 form-group required'>
+                                <div class='col-xs-12 form-group required mb-2'>
                                     <label class='control-label'>Name on Card</label>
                                     <input name="name" class='form-control' size='4' type='text'>
                                 </div>
                             </div>
                             <div class='form-row row'>
-                                <div class='col-xs-12 form-group required'>
+                                <div class='col-xs-12 form-group required mb-2'>
                                     <label class='control-label'>Email</label>
                                     <input name="email" class='form-control' size='4' type='text'>
                                 </div>
                             </div>
 
                             <div class='form-row row'>
-                                <div class='col-xs-12 form-group required'>
+                                <div class='col-xs-12 form-group required mb-2'>
                                     <label class='control-label'>Card Number</label> <input name="card" autocomplete='off' class='form-control card-number' size='20' type='text'>
                                 </div>
                             </div>
@@ -62,34 +62,34 @@
 
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (${{ $sum }})</button>
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ${{ $sum }}</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="d-flex p-4 rounded mb-4 bg-white">
-                            <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
-                            <div>
-                                <h4>Address</h4>
-                                <p class="mb-2">123 Street New York.USA</p>
-                            </div>
-                        </div>
-                        <div class="d-flex p-4 rounded mb-4 bg-white">
-                            <i class="fas fa-envelope fa-2x text-primary me-4"></i>
-                            <div>
-                                <h4>Mail Us</h4>
-                                <p class="mb-2">info@example.com</p>
-                            </div>
-                        </div>
-                        <div class="d-flex p-4 rounded bg-white">
-                            <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                            <div>
-                                <h4>Telephone</h4>
-                                <p class="mb-2">(+012) 3456 7890</p>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="col-lg-5">--}}
+{{--                        <div class="d-flex p-4 rounded mb-4 bg-white">--}}
+{{--                            <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>--}}
+{{--                            <div>--}}
+{{--                                <h4>Address</h4>--}}
+{{--                                <p class="mb-2">123 Street New York.USA</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="d-flex p-4 rounded mb-4 bg-white">--}}
+{{--                            <i class="fas fa-envelope fa-2x text-primary me-4"></i>--}}
+{{--                            <div>--}}
+{{--                                <h4>Mail Us</h4>--}}
+{{--                                <p class="mb-2">info@example.com</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="d-flex p-4 rounded bg-white">--}}
+{{--                            <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>--}}
+{{--                            <div>--}}
+{{--                                <h4>Telephone</h4>--}}
+{{--                                <p class="mb-2">(+012) 3456 7890</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -136,6 +136,8 @@
                 } else {
                     /* token contains id, last4, and card type */
                     var token = response['id'];
+                    localStorage.setItem("popup","true");
+                    console.log(localStorage.getItem("popup"));
                     $form.find('input[type=text]').empty();
                     $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
                     $form.get(0).submit();

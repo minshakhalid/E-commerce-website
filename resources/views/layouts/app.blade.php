@@ -34,6 +34,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('products.create') }}">Create Product</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('orders') }}">View Orders</a>
+                            </li>
                         @endauth
                     </ul>
 

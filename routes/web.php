@@ -20,6 +20,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/orders', [\App\Http\Controllers\HomeController::class, 'orders'])->name('orders');
+
 Route::resource('products', ProductController::class);
 
 Route::resource('cart', CartController::class);
@@ -31,3 +33,5 @@ Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'index'])->name('payment.index');
 
 Route::post('/payment', [App\Http\Controllers\PaymentController::class, 'store'])->name('payment.store');
+
+Route::view('/contact', 'contact')->name('contact');
