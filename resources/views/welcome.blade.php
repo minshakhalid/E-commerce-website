@@ -182,7 +182,7 @@
                                 <img src="img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
                                 <div class="px-4 rounded-bottom">
                                     <div class="service-content bg-primary text-center p-4 rounded">
-                                        <h5 class="text-white">Fresh Apples</h5>
+                                        <h5 class="text-white">Fresh Fruits</h5>
                                         <h3 class="mb-0">20% OFF</h3>
                                     </div>
                                 </div>
@@ -352,8 +352,8 @@
                         <div class="py-4">
                             <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
                             <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
-                            <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
-                            <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                            <p class="mb-4 text-dark">Discover rare and delightful fruits from around the globe, all available at peak freshness for your enjoyment</p>
+                            <a href="{{route('products.index')}}" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
                         </div>
                     </div>
                     <div class="col-lg-6">

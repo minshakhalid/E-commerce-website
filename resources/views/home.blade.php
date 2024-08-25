@@ -11,6 +11,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Category</th>
                     <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -24,7 +25,7 @@
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Delete</button>
+                                <button type="submit" style="border: none; background-color: transparent; color: red; text-decoration: underline ">Delete</button>
                             </form>
                         </td>
                     </tr>
